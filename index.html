@@ -21,14 +21,14 @@ Make an app that might help someone figure out if they have allergies or a cold.
 
  
 Known Issues:
-blah, blah, blah, blah
+Diagnosing whether you have an allergy or a cold based on your symptoms.
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
    <head> 
-      <title>Hello World</title>  
+      <title>Allergy or Cold</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -112,8 +112,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?.</p>
-		<a href="#two"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
-         	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+		<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
+         	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
 
 	</div>
 </div>	
@@ -125,8 +125,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?.</p>
-			<a href="#two"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
-         	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+			<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
+         	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
 	</div>
 </div>	
 <div class="page" id="four">
@@ -136,17 +136,20 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?.</p>
-		<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-         	<a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+		<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+         	<a href="#five"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
 </div>
 </div>	
 
 <div class="page" id="results">
-	<div class="w3-container w3-flat-carrot">
-		var resultText = document.getElemecntById("results")
-		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
+    <div class="w3-container w3-flat-carrot">
+        <h1>Results</h1>
+    </div>
+
+    <div id="content" class="w3-container">
+        <p id="resultText"></p>
+    </div>
 </div>
-</div>	
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
