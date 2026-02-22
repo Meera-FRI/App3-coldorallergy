@@ -50,6 +50,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         function coldAdd(){
             cold_count = cold_count + 1;
         }
+	function calculateResults(
+		var allergyPercent = (allergy_count / 5) * 100;
+		var coldPercent = (cold_count / 5) * 100;
+		var resultElement = document-getElementById("results_display");
+
+	resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
+	}
 
   </script>
 
@@ -141,15 +148,43 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>
 </div>	
 
-<div class="page" id="results">
+	<div class="page" id="five">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you constantly feel fatigued?.</p>
+			<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
+         	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+	</div>
+</div>	
+<div class="page" id="six">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Have you been wheezing?.</p>
+		<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+         	<a href="#five"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+</div>
+</div>	
+	
+<div class="page" id="seven">
     <div class="w3-container w3-flat-carrot">
         <h1>Results</h1>
     </div>
 
     <div id="content" class="w3-container">
-        <p id="resultText"></p>
+        <p>Click below to view your results.</p>
+		‹a href="#seven" onclick="calculateResults();" class="w3-btn w3-grey w3-round"> View Results </a>
     </div>
 </div>
+	
+<div class="page" id="eight">
+<div id="header" class="w3-container w3-flat-carrot">
+<h1>Result</h1>
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
