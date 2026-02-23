@@ -37,25 +37,31 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-        var allergy_count = 0;
+         // These variables keep track of how many answers point to each condition
+		var allergy_count = 0;
         var cold_count = 0;
 
-
+		 // This function adds a point when their answer indicates a sign of allergies
         function allergyAdd(){
             allergy_count = allergy_count + 1;
 		alert(allergy_count);
-
         }
-
+	
+ // This function adds a point when their answer indicates they have a cold 
         function coldAdd(){
             cold_count = cold_count + 1;
         }
-	function calculateResults(){
-    var allergyPercent = (allergy_count / 6) * 100;
-    var coldPercent = (cold_count / 6) * 100;
+	// This function calculates and displays the final results
+		function calculateResults(){
+   	
+	// Calculates the total counts into percentages
+		var allergyPercent = (allergy_count / 6) * 100;
+    	var coldPercent = (cold_count / 6) * 100;
 
-    var resultElement = document.getElementById("results_display");
-
+	// Get the HTML element where results will be displayed
+    	var resultElement = document.getElementById("results_display");
+	
+	// Inserts the results onto the page
     resultElement.innerHTML =
         "Probability it is allergies = " + allergyPercent.toFixed(1) + "%<br>" +
         "Probability it is a cold = " + coldPercent.toFixed(1) + "%";
@@ -101,95 +107,104 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 </div> <!-- adding this because it seems to be missing????? -->
 	
-<div class="page" id="one">
+<div class="page" id="one"> <!-- This is page 1 -->
 	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
+		<h1>Question 1</h1> <!-- Question Number -->
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?.</p>    
+			<!-- The question -->
+        <p>Are your eyes watery or itchy?.</p> 
+			<!-- If user clicks yes it will increase allergy score or increase cold score if no and both will make it go to next page -->
 			<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
          	<a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
 
     	</div>
 </div>
 
-<div class="page" id="two">
+<div class="page" id="two"> <!-- This is page 2 -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?.</p>
+		<!-- If user clicks no it will increase allergy score or increase cold score if yes and both will make it go to next page -->
 		<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
          	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
 
 	</div>
 </div>	
 
-<div class="page" id="three">
+<div class="page" id="three"> <!-- This is page 3 -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?.</p>
+		<!-- If user clicks no it will increase allergy score or increase cold score if yes and both will make it go to next page -->
 			<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
          	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
 	</div>
 </div>	
-<div class="page" id="four">
+<div class="page" id="four"> <!-- This is page 4 -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?.</p>
+		<!-- If user clicks yes it will increase allergy score or increase cold score if no and both will make it go to next page -->
 		<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
          	<a href="#five"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
 </div>
 </div>	
 
-	<div class="page" id="five">
+	<div class="page" id="five"> <!-- This is page 5 -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 5</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Do you constantly feel fatigued?.</p>
+		<!-- If user clicks no it will increase allergy score or increase cold score if yes and both will make it go to next page -->
 			<a href="#six"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
          	<a href="#six"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
 	</div>
 </div>	
-<div class="page" id="six">
+<div class="page" id="six"> <!-- This is page 6 -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 6</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Have you been wheezing?.</p>
+		<!-- If user clicks yes it will increase allergy score or increase cold score if no and both will make it go to next page -->
 		<a href="#seven"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
          	<a href="#seven"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
 </div>
 </div>	
 	
-<div class="page" id="seven">
+<div class="page" id="seven"> <!-- Page before final results -->>
     <div class="w3-container w3-flat-carrot">
         <h1>Results</h1>
     </div>
 
     <div id="content" class="w3-container">
         <p>Click below to view your results.</p>
+		<!-- When clicked it will calculate the results and move to page 8 -->
 		<a href="#eight" onclick="calculateResults();" class="w3-btn w3-grey w3-round">View Results</a>
     </div>
 </div>
 	
-<div class="page" id="eight">
+<div class="page" id="eight"> <!-- Final results page -->
     <div id="header" class="w3-container w3-flat-carrot">
         <h1>Result</h1>
     </div>
 
     <div id="content" class="w3-container">
+		<!-- This is where the user can see their results -->
         <p id="results_display"></p>
     </div>
 </div>
