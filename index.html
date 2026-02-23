@@ -50,14 +50,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         function coldAdd(){
             cold_count = cold_count + 1;
         }
-	function calculateResults(
-		var allergyPercent = (allergy_count / 5) * 100;
-		var coldPercent = (cold_count / 5) * 100;
-		var resultElement = document-getElementById("results_display");
+	function calculateResults(){
+    var allergyPercent = (allergy_count / 6) * 100;
+    var coldPercent = (cold_count / 6) * 100;
 
-	resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
+    var resultElement = document.getElementById("results_display");
+
+    resultElement.innerHTML =
+        "Probability it is allergies = " + allergyPercent.toFixed(1) + "%<br>" +
+        "Probability it is a cold = " + coldPercent.toFixed(1) + "%";
 	}
-
   </script>
 
 
@@ -155,8 +157,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Do you constantly feel fatigued?.</p>
-			<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
-         	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+			<a href="#six"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
+         	<a href="#six"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
 	</div>
 </div>	
 <div class="page" id="six">
@@ -166,8 +168,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Have you been wheezing?.</p>
-		<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
-         	<a href="#five"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+		<a href="#seven"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+         	<a href="#seven"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
 </div>
 </div>	
 	
@@ -178,17 +180,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
     <div id="content" class="w3-container">
         <p>Click below to view your results.</p>
-		‹a href="#seven" onclick="calculateResults();" class="w3-btn w3-grey w3-round"> View Results </a>
+		<a href="#eight" onclick="calculateResults();" class="w3-btn w3-grey w3-round">View Results</a>
     </div>
 </div>
 	
 <div class="page" id="eight">
-<div id="header" class="w3-container w3-flat-carrot">
-<h1>Result</h1>
+    <div id="header" class="w3-container w3-flat-carrot">
+        <h1>Result</h1>
+    </div>
 
+    <div id="content" class="w3-container">
+        <p id="results_display"></p>
+    </div>
+</div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
-
 </body>
 </html>
